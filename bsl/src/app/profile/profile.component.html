@@ -1,0 +1,32 @@
+<style>
+          h4{
+        background-color: beige;
+        padding: 10px;
+      }
+      .myRow {
+      padding: 10px;
+      background-color: yellow; 
+      border-bottom: 2px solid black;
+    }
+    img{height: 300px;}
+
+    #profile div div h1 {
+      padding: 2px;
+    }
+</style>
+
+<div class="container">
+<div class="row">
+    <div class="col-sm-7">     
+        <h3>Role: </h3>             
+        <div class='myRow'>Name: </div>
+        <div class='myRow'>Age: </div>
+        <div class='myRow'>General Info: </div>
+        <div class='myRow'>Employee Id: </div>
+        </div>
+    <div class="col-sm-5">
+      <img src="resource/default_pfp.png">
+    </div>
+</div>
+<button (click)="forwardItToLoginPage()"> Logout </button>
+</div>
