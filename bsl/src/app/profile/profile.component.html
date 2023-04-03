@@ -1,5 +1,14 @@
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <style>
-          h4{
+      h4{
         background-color: beige;
         padding: 10px;
       }
@@ -20,13 +29,14 @@
     <div class="col-sm-7">     
         <h3>Role: </h3>             
         <div class='myRow'>Name: </div>
-        <div class='myRow'>Age: </div>
-        <div class='myRow'>General Info: </div>
-        <div class='myRow'>Employee Id: </div>
+        <div class='myRow'>Role: </div>
+        <div class='myRow'>Email: </div>
+        <div class='myRow'>Institution Name: </div>
         </div>
     <div class="col-sm-5">
-      <img src="resource/default_pfp.png">
+      <img src="../../assets/goodbye.jpg">
     </div>
 </div>
-<button (click)="forwardItToLoginPage()"> Logout </button>
+<button (click)="populate_profile()">Refresh</button>
+<button (click)="logout()"> Logout </button>
 </div>

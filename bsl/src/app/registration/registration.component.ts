@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -6,6 +7,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+
+  constructor(private router: Router){}
 
   ip_addr:string = "http://127.0.0.1:8000";
   
@@ -15,8 +18,6 @@ export class RegistrationComponent {
     const role:string = (<HTMLInputElement>document.getElementById("role")).value;
     const email:string = (<HTMLInputElement>document.getElementById("email")).value;
     const institution:string = (<HTMLInputElement>document.getElementById("Institution")).value;
-
-    console.log("Results: "+username, password, role, email, institution);
 
     let url = this.ip_addr + "/registration/";
     let data = {
@@ -29,24 +30,23 @@ export class RegistrationComponent {
 
     console.log(data);
     fetch(url, {
-        method: "POST",
-        mode: "cors", 
-        cache: "no-cache", 
-        credentials: "same-origin", 
+        method: "POST",mode: "cors", cache: "no-cache", credentials: "same-origin", 
         headers: {
         "Content-Type": "application/json",
         },
-        redirect: "follow", 
-        referrerPolicy: "no-referrer", 
-        body: JSON.stringify(data), 
+        redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data), 
     })
     .then((resolve)=>{
         console.log("Registration Request has been resolved!");
         return resolve.json()
     })
     .then((data)=>{
-        //document.write("It worked!");
-        //document.getElementById("status").innerText = "User Id for registered user: "+data.RegisteredUserId;
+        console.log("Auth Token: "+data.authToken);
+        sessionStorage.setItem("authToken", data.authToken);
+        sessionStorage.setItem("role", data.role);
+
+        if(data.role=="Teacher") this.router.navigate(['/teacher-dashboard']);
+        else if(data.role=="Student") this.router.navigate(['/student-dashboard']);
     })
     .catch((err)=>{
       console.log(err);
