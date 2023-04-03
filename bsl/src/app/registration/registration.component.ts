@@ -18,13 +18,13 @@ export class RegistrationComponent {
 
     console.log("Results: "+username, password, role, email, institution);
 
-    let url = this.ip_addr + "/registration";
+    let url = this.ip_addr + "/registration/";
     let data = {
         "username": username,
         "password": password,
         "role": role,
         "email": email,
-        "institution": institution,
+        "institution": institution
     }
 
     console.log(data);

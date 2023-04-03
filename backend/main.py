@@ -1,4 +1,4 @@
-from fastapi import FastAPI;
+from fastapi import FastAPI, Request;
 from fastapi.middleware.cors import CORSMiddleware
 from urllib.parse import unquote
 
@@ -17,14 +17,18 @@ app.add_middleware(
 def root(test, test2):
     return [test, test2]
 
-@app.post("/registration")
-def register_new_user(user:str):
-    user = unquote(user)
-    print(user)
-    user = User(user.username, user.password, user.institution_name, user.email, user.role)
+@app.post("/registration/")
+async def register_new_user(request: Request):
+    userdata = await request.json()
+    print(userdata)
+
+
+    user = User(userdata["username"], userdata["password"], userdata["institution"], userdata["email"], userdata["role"])
     add_user(user)
     authToken = createSession(user)
     return {"Status":"Success", "authToken": authToken }
+
+
 
 @app.post("/login")
 def authenticate(username: str, password: str):
