@@ -10,6 +10,10 @@ import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     UsersComponent,
     ProfileComponent,
-    EditUserInfoComponent
+    EditUserInfoComponent,
+    HomeComponent,
+    RegistrationComponent,
+    StudentDashboardComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     BrowserModule,

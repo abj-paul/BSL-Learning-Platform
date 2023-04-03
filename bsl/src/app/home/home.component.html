@@ -1,0 +1,26 @@
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container bodyCenter">
+    <h1>Bangla Sign Language Learning Platform.</h1>
+    <div class="row">
+        <div class="col-sm-6 leftSideBSLImage">
+            <img src="../../assets/happy-fall-asl.png">
+        </div>
+        <div class="col-sm-6 rightSideConent">
+            <div id="description"> Students have it really hard when it comes to learning bangla sign language. Their vocabulary becomes limited for this reason and it harms them in the long term. Hence, this initiative - BSL Learning platform. Here, tutors can upload tutorials for their institution and students can view it easily. Additionally, we will implement activity recognition to aid students adjust their hand posture when learning sign language and would provide live evaluation.</div>
+            <a [routerLink]="['/login']"><button>Start Learning Now!</button></a>
+        
+            <div>Tutors are vital for the sustainence of this platform. Every sign language experts are highly encouraged to upload their videos and courses for sign language. The students can search the tutor and view their videos. This way, this platform can also be a subpart of a school learning program.</div>
+            <a [routerLink]="['/login']"><button>Become a Tutor!</button></a>
+        </div>
+    </div>
+</div>
+
+

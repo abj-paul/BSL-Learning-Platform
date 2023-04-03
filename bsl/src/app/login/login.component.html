@@ -7,19 +7,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<div class="container">
-    <h2>Login : BSL</h2>
-    <p>The form below contains two input elements; one of type text and one of type password:</p>
-    <form>
-      <div class="form-group">
-        <label for="usr">Name:</label>
-        <input type="text" class="form-control" id="usr">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
-      </div>
-    </form>
-    <button (click)="authenticateAndPrint()">Submit Login Credentials</button> 
-    <span> Status : {{loginStatus}} </span>
+<div class="container bodyCenter">
+
+  <div class="row">
+
+    <div class="col-sm-6 leftSideBSLImage">
+      <img src="../../assets/sign-language-multiple-person.jpg">
+    </div>
+    <div class="col-sm-6 rightSideConent">
+      <h2>Login : BSL</h2>
+      <p>Login to start teaching & learning everyday! Login credentials can be changed anytime after login.</p>
+      <form>
+        <div class="form-group">
+          <label for="usr">Name:</label>
+          <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd">
+        </div>
+      </form>
+      <button (click)="authenticateAndPrint()">Submit Login Credentials</button> 
+      <a [routerLink]="['/registration']"> New User? Create an Account!</a>
+      <br>
+      <a href=""> <p>Forget Password</p> </a>
+
+    </div>
+
+  </div>
+
   </div>
