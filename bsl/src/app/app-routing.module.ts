@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 import { ProfileComponent } from './profile/profile.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { RegisterComponent } from './register/register.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
-import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
+  {path:"", component:HomeComponent},
   {path:"home", component: HomeComponent},
-  {path:"login", component: LoginComponent},
-  {path:"registration", component: RegistrationComponent},
-  {path:"student-dashboard", component: StudentDashboardComponent},
-  {path:"teacher-dashboard", component: TeacherDashboardComponent},
-  {path:"", component: HomeComponent},
-  {path:"*", component: HomeComponent}
+  {path:"register", component:RegisterComponent},
+  {path:"login", component:LoginComponent},
+  {path:"profile", component:ProfileComponent},
+  {path: "otp-verification", component: OtpVerificationComponent},
+  {path: "forgot-password", component: ForgotPasswordComponent},
+  {path: "teacher-dashboard", component: TeacherDashboardComponent}
 ];
 
 @NgModule({

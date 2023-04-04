@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from './login.service';
+import { Route, Router } from '@angular/router';
+import { ConstantService } from '../services/constant.service';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,45 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
 
-  constructor(private loginService: LoginService){}
+  loginStatus: string = '';
+  username: string = '';
+  password: string = '';
 
-  loginStatus: boolean = false;
+  constructor(private router : Router, private constants: ConstantService){}
 
-  authenticateAndPrint(){
-    const userName = document.getElementsByTagName("input")[0].value ;
-    const password = document.getElementsByTagName("input")[1].value ;
+  authenticate(){
+    let url = this.constants.getIpAddres() + "/login/";
+    let data = {
+        "username": this.username,
+        "password": this.password
+    }
 
-    console.log(userName, password);
-    this.loginStatus = this.loginService.authenticate(userName, password);
-    console.log("Login Status: "+this.loginStatus);
+    console.log(data);
+    fetch(url, {
+        method: "POST",mode: "cors", cache: "no-cache", credentials: "same-origin", 
+        headers: {
+        "Content-Type": "application/json",
+        },
+        redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data), 
+    })
+    .then((resolve)=>{
+        console.log("Registration Request has been resolved!");
+        return resolve.json()
+    })
+    .then((data)=>{
+        sessionStorage.setItem("username", this.username);
+        sessionStorage.setItem("role", data["role"]);
+        sessionStorage.setItem("email", data.email);
+        sessionStorage.setItem("institution", data.institution);
+        sessionStorage.setItem("authToken", data.authToken);
+
+        this.loginStatus = data.Status;
+
+        this.router.navigate(['teacher-dashboard']);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+  console.log("Login Status: "+this.loginStatus);
   }
 }

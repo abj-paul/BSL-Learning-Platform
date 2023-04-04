@@ -1,5 +1,0 @@
-- [X] Add image in Home , Registration, Login
-- [X] Make api endpoint for Registration
-- Connect with that endpoint
-- [X] Make api endpoint for login
-- [X] Make api endpoint for profile

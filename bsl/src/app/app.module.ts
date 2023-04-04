@@ -3,35 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { UsersComponent } from './users/users.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EditUserInfoComponent } from './edit-user-info/edit-user-info.component';
+import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    NavbarComponent,
-    FooterComponent,
-    UsersComponent,
-    ProfileComponent,
-    EditUserInfoComponent,
+    RegisterComponent,
+    OtpVerificationComponent,
+    TeacherDashboardComponent,
     HomeComponent,
-    RegistrationComponent,
-    StudentDashboardComponent,
-    TeacherDashboardComponent
+    LoginComponent,
+    ProfileComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

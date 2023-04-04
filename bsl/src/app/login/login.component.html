@@ -19,18 +19,18 @@
       <p>Login to start teaching & learning everyday! Login credentials can be changed anytime after login.</p>
       <form>
         <div class="form-group">
-          <label for="usr">Name:</label>
-          <input type="text" class="form-control" id="usr">
+          <label>Name:</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="username">
         </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
+          <input type="password" class="form-control" name="password" [(ngModel)]="password">
         </div>
       </form>
-      <button (click)="authenticateAndPrint()">Submit Login Credentials</button> 
-      <a [routerLink]="['/registration']"> New User? Create an Account!</a>
+      <button (click)="authenticate()">Submit Login Credentials</button> 
+      <a [routerLink]="['/register']"> New User? Create an Account!</a>
       <br>
-      <a href=""> <p>Forget Password</p> </a>
+      <a [routerLink]="['/forgot-password']"> <p>Forgot Password</p> </a>
 
     </div>
 
