@@ -52,11 +52,16 @@ export class OtpVerificationComponent implements OnInit {
         return resolve.json()
     })
     .then((data)=>{
+      if(data=="FORGOT_PASSWORD_OPERATION_FAILED" || data=="WRONG_OTP"){
+        this.router.navigate(['invalid-credentials']);
+      }
+      else {
         console.log("User Registration OTP Verification Response: "+data.authToken);
         sessionStorage.setItem("authToken", data.authToken);
         sessionStorage.setItem("OTP", this.submitted_otp);
         if(this.FORGOT_PASSWORD_PROCESS==false) this.router.navigate(['teacher-dashboard']);
         else this.router.navigate(['login']);
+      }
     })
     .catch((err)=>{
       console.log(err);
