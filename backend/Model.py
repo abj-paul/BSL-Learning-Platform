@@ -48,3 +48,12 @@ def update_password_in_db(email, new_password):
     
     conn.commit()
     conn.close()
+
+def drop_table():
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+
+    c.execute("drop table if exists user")
+    
+    conn.commit()
+    conn.close()

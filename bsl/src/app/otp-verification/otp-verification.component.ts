@@ -36,7 +36,7 @@ export class OtpVerificationComponent implements OnInit {
         "email": email,
         "institution": institution,
         "OTP": this.submitted_otp,
-        "new_password": ''
+        "new_password": this.new_password
     }
 
     console.log(data);

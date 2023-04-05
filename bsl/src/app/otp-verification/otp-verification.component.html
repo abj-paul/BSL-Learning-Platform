@@ -12,11 +12,11 @@
     <form>
       <div class="form-group">
         <label>OTP Verification Code:</label>
-        <input type="number" class="form-control" name="submitted_otp" [(ngModel)]="submitted_otp">
+        <input type="text" class="form-control" name="submitted_otp" [(ngModel)]="submitted_otp">
       </div>
       <div *ngIf="FORGOT_PASSWORD_PROCESS==true" class="form-group">
         <label>Set new Password:</label>
-        <input type="number" class="form-control" name="new_password" [(ngModel)]="new_password">
+        <input type="text" class="form-control" name="new_password" [(ngModel)]="new_password">
       </div>
     </form>
     <button (click)="verifySubmittedOTP()">Register</button> 

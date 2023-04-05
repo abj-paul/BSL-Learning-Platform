@@ -8,6 +8,9 @@ from constants import *
 from Mail import *
 from Model import *
 
+drop_table()
+create_user_table()
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -16,7 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-create_user_table()
+
 
 @app.get("/")
 def root():
@@ -30,7 +33,7 @@ async def register_user(request: Request):
 
     user = User(userdata["username"], userdata["password"], userdata["institution"], userdata["email"], userdata["role"])
     otp = createOTPForUser(user)
-    # print("#####Generated OTP: "+str(otp)) # mail OTP
+    print("#####Generated OTP: "+str(otp)) # mail OTP
     send_mail("Please enter the following OTP in BSL Learning Platform to confirm your account! "+str(otp), user.email)
     return {"Status":"Registration Success", "Next Operation":"Verify OTP to confirm your account.", "OTP":otp }
 
