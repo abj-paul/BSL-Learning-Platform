@@ -35,6 +35,10 @@ export class LoginComponent {
         return resolve.json()
     })
     .then((data)=>{
+      console.log("Login Data:"+data);
+      if(data=="WRONG_LOGIN_CREDENTIALS"){
+        this.router.navigate(['invalid-credentials']);
+      }else{
         sessionStorage.setItem("username", this.username);
         sessionStorage.setItem("role", data["role"]);
         sessionStorage.setItem("email", data.email);
@@ -44,6 +48,7 @@ export class LoginComponent {
         this.loginStatus = data.Status;
 
         this.router.navigate(['teacher-dashboard']);
+      }
     })
     .catch((err)=>{
       console.log(err);
