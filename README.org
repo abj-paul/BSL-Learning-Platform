@@ -1,10 +1,8 @@
 * About
 This project has been moved to [[https://github.com/Labonnya/sign-video][this repository.]]
 
-** backend
-- array : Login credentials
-- functions: CRUD to array
-** Syllabus
+
+*** About Angular
 - Angular what & why: SPA
 - MVC
 - service
