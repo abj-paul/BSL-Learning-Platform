@@ -1,0 +1,7 @@
+
+ Easy Hand Sign Detection 
+- [ ] [[https://www.youtube.com/watch?v=wa2ARoUUdU8][Sign language detection from image dataset]]
+- [ ] [[https://www.youtube.com/watch?v=t0EzVCvQjGE][Image Classification]]
+- [ ] [[https://www.youtube.com/watch?v=doDUihpj6ro][Sign Language Detection using ACTION RECOGNITION with Python]]
+- [X] [[https://www.youtube.com/watch?v=pDXdlXlaCco][Real Time Sign Language Detection with Tensorflow Object Detection]]
+- [ ] [[https://www.youtube.com/watch?v=M2iklVDKsw0&list=PLkz_y24mlSJYWpwFbU8fyaBSwihoVHiJz][Sign Language Detection using YoloV5]]
